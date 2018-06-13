@@ -6,7 +6,7 @@ This website houses personal projects completed to be presented as supplementary
 
 
 ### Hosted environment on Heroku
-https://chen-joseph-webdev.herokuapp.com/
+https://chen-joseph-site.herokuapp.com/
 
 
 
