@@ -1,0 +1,21 @@
+<div class="container-fluid scroll">
+
+
+    <label for="name">Name</label>
+    <input name="name"
+           ng-model="model.widget.name"
+           id="name"
+           placeholder="Widget name"
+           class="form-control"/>
+
+    <div text-angular ng-model="model.widget.text">
+        <div class="ta-toolbar=[['h1','h2','h3'],['bold','italics','underline','strikeThrough'],
+        ['ul','ol'],['justifyLeft','justifyCenter','justifyRight','justifyFull'],
+        ['indent','outdent'],['html']]">
+        </div>
+    </div>
+
+
+    <a class="btn btn-default btn-primary btn-block" ng-click="model.updateWidget(model.widget)" role="button">Ok</a>
+    <a class="btn btn-default btn-danger btn-block" ng-click="model.unCreate()" role="button">Delete</a>
+</div>

@@ -1,0 +1,30 @@
+<div class="running-head">
+    Widgets
+    <a class="btn-link header-button pull-left" href="#!/user/{{model.userId}}/website/{{model.websiteId}}/page/{{model.pageId}}/widget" role="button">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+    </a>
+</div>
+<div ng-switch="model.widget.type">
+    <div ng-switch-when="HEADING">
+        <ng-include src="'views/widget/templates/editors/widget-heading-edit.view.client.html'">
+    </div>
+    <div ng-switch-when="IMAGE">
+        <ng-include src="'views/widget/templates/editors/widget-image-edit.view.client.html'">
+    </div>
+    <div ng-switch-when="YOUTUBE">
+        <ng-include src="'views/widget/templates/editors/widget-youtube-edit.view.client.html'">
+    </div>
+    <div ng-switch-when="HTML">
+        <ng-include src="'views/widget/templates/editors/widget-html-edit.view.client.html'">
+    </div>
+    <div ng-switch-when="TEXT">
+        <ng-include src="'views/widget/templates/editors/widget-text-edit.view.client.html'">
+    </div>
+</div>
+
+
+<div class="running-foot">
+    <a class="btn-link footer-button pull-right" href="#!/profile/{{model.userId}}" role="button">
+        <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+    </a>
+</div>

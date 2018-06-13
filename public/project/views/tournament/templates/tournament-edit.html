@@ -1,0 +1,59 @@
+<div class="running-head">
+    <a class="btn-link header-button pull-left" onclick="window.history.back()" role="button">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+    </a>
+    <a class="btn-link header-button pull-left" href="#!/" role="button">
+        Home
+    </a>
+    <a ng-show="!model.loggedInUser" class="btn-link header-button pull-right" href="#!/login" role="button">
+        Login
+    </a>
+    <a ng-show="model.loggedInUser" class="btn-link header-button pull-right" href="#!/login" role="button">
+        Logout
+    </a>
+    <a ng-show="model.loggedInUser" class="btn-link header-button pull-right" href="#!/profile/{{model.loggedInUser.username}}" role="button">
+        Profile
+    </a>
+</div>
+
+
+<div class="container-fluid scroll">
+    <h2>{{model.tournament.name}}</h2>
+    <h3>Organized by {{model.tournament.organizer.username}}</h3>
+
+    <h3>Openings: {{model.openings}}/{{model.tournament.max}}</h3>
+
+    <div ng-show="model.openings != model.tournament.max">
+        <ul class="list-group">
+            <li class="list-group-item active">
+                <div class="row">
+                    <div class="col-xs-6">Participant</div>
+                    <div class="col-xs-6">Deck</div>
+                </div>
+            </li>
+            <li ng-repeat="participant in model.tournament.participants track by $index" class="list-group-item">
+                <div class="row">
+                    <div class="col-xs-6">
+                        <a href="#!/profile/{{participant.username}}" role="button">
+                            {{participant.username}}
+                        </a>
+                    </div>
+                    <div class="col-xs-5">
+                        <a href="#!/deck/{{participant.username}}/{{participant.deck}}" role="button">
+                            {{participant.username}}'s deck
+                        </a>
+                    </div>
+                    <div class="col-xs-1">
+                        <a ng-click="model.deleteUserFromTournament(participant, model.tournamentId)" role="button">
+                            Delete
+                        </a>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <a class="btn btn-danger btn-block" ng-click="model.deleteTournament(model.tournamentId)" role="button">
+        Delete this Tournament
+    </a>
+</div>

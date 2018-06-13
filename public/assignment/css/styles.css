@@ -1,0 +1,137 @@
+h1.entrance {font-size: 42px}
+
+input, textarea {
+    margin-bottom: 5px;
+}
+
+.youtube-widget {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 */
+    height: 0;
+}
+
+.youtube-widget iframe {
+    position: absolute;
+    top: 20px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding-bottom: 20px;
+}
+
+.centerpiece {
+    margin: auto;
+    padding-bottom: 50px;
+}
+
+h1.centerpiece {
+    padding-top: 50px;
+    width: 150px;
+}
+
+
+p.centerpiece {
+    width: 180px;
+}
+
+.hanging-center {
+    width: 150px;
+    margin: auto;
+}
+
+.no-underline a:hover{
+    text-decoration: none;
+}
+
+.container-fluid.scroll {
+    width: 100%;
+    position: absolute;
+    top: 65px;
+    bottom: 65px;
+    overflow-y: scroll;
+}
+
+.container-fluid.scroll-no-foot {
+    bottom: 35px;
+}
+
+.container-fluid.scroll-no-head {
+    top: 35px;
+}
+
+.running-head {
+    display: block;
+    color: white;
+    background-color: #337ab7;
+    margin-top: 0px;
+    margin-bottom: 10px;
+    padding: 15px 15px 15px 15px;
+    font-size: 20px;
+    width: 100%;
+}
+
+.header-button {
+    border: none;
+    background-color: #337ab7;
+    color: white;
+    padding-right: 10px;
+}
+
+
+.running-foot {
+    color: white;
+    background-color: #337ab7;
+    margin-top: 10px;
+    margin-bottom: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    padding: 15px 15px 15px 15px;
+    font-size: 20px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer-button {
+    border: none;
+    background-color: #337ab7;
+    color: white;
+}
+
+.col-xs-3.jga-split-left {
+    position: absolute;
+    z-index: 1;
+    top: 65px;
+    bottom: 65px;
+    overflow-y: scroll;
+}
+
+@media (min-width: 1200px) {
+    .col-lg-9.jga-split-right {
+        width: 75%;
+        position: absolute;
+        right: 0px;
+        top: 65px;
+        bottom: 65px;
+        overflow-y: scroll;
+    }
+}
+
+.col-xs-12 {
+    width: 100%;
+    position: absolute;
+    right: 0px;
+    top: 65px;
+    bottom: 65px;
+    overflow-y: scroll;
+}
+
+li.borderless {
+    border: none;
+    font-size: large;
+}
+
+.widget-edit {
+    padding-left: 5px;
+    z-index: 1;
+}

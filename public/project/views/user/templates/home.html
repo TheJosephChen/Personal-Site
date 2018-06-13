@@ -1,0 +1,61 @@
+<div class="running-head">
+    <a class="btn-link header-button pull-left" onclick="window.history.back()" role="button">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+    </a>
+    <div class="pull-left">
+        Home
+    </div>
+    <a ng-show="!model.loggedInUser" class="btn-link header-button pull-right" href="#!/login" role="button">
+        Login
+    </a>
+    <a ng-show="model.loggedInUser" class="btn-link header-button pull-right" href="#!/login" role="button">
+        Logout
+    </a>
+    <a ng-show="model.loggedInUser" class="btn-link header-button pull-right" href="#!/profile/{{model.loggedInUser.username}}" role="button">
+        Profile
+    </a>
+    <a ng-show="model.loggedInUser && model.loggedInUser.roles.indexOf('ADMIN') !== -1" class="btn-link header-button pull-right" href="#!/admin" role="button">
+        Admin
+    </a>
+</div>
+
+<div class="container-fluid scroll">
+    {{model.errorMessage}}
+    <input placeholder="Lookup user"
+           ng-model="userName"
+           class="form-control"/>
+    <button class="btn btn-primary btn-block" ng-click="model.findUserByName(userName)">
+        <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+    </button>
+
+    <h1>Cards</h1>
+    <a class="btn btn-primary btn-block" href="#!/search" role="button">
+        Look up cards
+    </a>
+
+    <h1>Tournaments</h1>
+    <div ng-show="model.loggedInUser">
+        <a class="btn btn-primary btn-block" href="#!/tournament/create" role="button">
+            Create a tournament
+        </a>
+        <a class="btn btn-primary btn-block" href="#!/tournament/" role="button">
+            Find a tournament to join
+        </a>
+        <div ng-show="model.loggedInUser.roles.indexOf('ORGANIZER') !== -1">
+            <a class="btn btn-primary btn-block" href="#!/tournament/manage/{{model.loggedInUser.username}}" role="button">
+                Manage Tournaments
+            </a>
+        </div>
+        <div ng-show="model.loggedInUser.roles.indexOf('PARTICIPANT') !== -1">
+            <a class="btn btn-primary btn-block" href="#!/tournament/active/{{model.loggedInUser.username}}" role="button">
+                Your Active Tournaments
+            </a>
+        </div>
+    </div>
+    <div ng-show="!model.loggedInUser">
+        <a class="btn btn-success btn-block" href="#!/login" role="button">
+            Log in to view and join tournaments
+        </a>
+    </div>
+
+</div>

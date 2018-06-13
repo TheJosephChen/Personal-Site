@@ -1,0 +1,40 @@
+<div class="running-head">
+    <a class="btn-link header-button pull-left" onclick="window.history.back()" role="button">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+    </a>
+    <a class="btn-link header-button pull-left" href="#!/" role="button">
+        Home
+    </a>
+    <a ng-show="!model.loggedInUser" class="btn-link header-button pull-right" href="#!/login" role="button">
+        Login
+    </a>
+    <a ng-show="model.loggedInUser" class="btn-link header-button pull-right" href="#!/login" role="button">
+        Logout
+    </a>
+    <a ng-show="model.loggedInUser" class="btn-link header-button pull-right" href="#!/profile/{{model.loggedInUser.username}}" role="button">
+        Profile
+    </a>
+</div>
+
+
+<div class="container-fluid scroll">
+    <h2>Tournaments you are organizing</h2>
+    <ul class="list-group">
+        <li class="list-group-item active">
+            <div class="row">
+                <div class="col-xs-6">Name</div>
+                <div class="col-xs-6">Openings</div>
+            </div>
+        </li>
+        <li ng-repeat="tournament in model.tournaments track by $index" class="list-group-item">
+            <div class="row">
+                <div class="col-xs-6">
+                    <a href="#!/tournament/{{tournament._id}}/edit" role="button">
+                        {{tournament.name}}
+                    </a>
+                </div>
+                <div class="col-xs-6">{{tournament.max - tournament.participants.length}}/{{tournament.max}}</div>
+            </div>
+        </li>
+    </ul>
+</div>

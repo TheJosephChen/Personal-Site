@@ -1,0 +1,38 @@
+<div class="running-head">
+    <a class="btn-link header-button pull-left" href="#!/" role="button">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+    </a>
+    <a class="btn-link header-button pull-left" href="#!/" role="button">
+        Home
+    </a>
+</div>
+
+<div class="container-fluid scroll">
+
+    <div>
+
+        <div ng-show="model.errorMessage" class="alert alert-danger">
+            {{model.errorMessage}}
+        </div>
+
+        <h1 class="entrance">Login</h1>
+
+        <label for="username">Username</label>
+        <input name="username"
+               ng-model="model.user.username"
+               id="username"
+               placeholder="username"
+               class="form-control"/>
+
+        <label for="password">Password</label>
+        <input name="password"
+               ng-model="model.user.password"
+               type="password"
+               id="password"
+               placeholder="password"
+               class="form-control"/>
+
+        <a class="btn btn-default btn-primary btn-block" ng-click="model.login(model.user)" role="button">Login</a>
+        <a class="btn btn-default btn-success btn-block" href="#!/register" role="button">Register</a>
+    </div>
+</div>

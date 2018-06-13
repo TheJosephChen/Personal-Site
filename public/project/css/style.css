@@ -1,0 +1,64 @@
+input, textarea {
+    margin-bottom: 5px;
+}
+
+.container-fluid.scroll {
+    width: 100%;
+    position: absolute;
+    top: 65px;
+    bottom: 0px;
+    overflow-y: scroll;
+}
+
+.running-head {
+    position: absolute;
+    display: block;
+    color: white;
+    background-color: dodgerblue;
+    border-color: deepskyblue;
+    margin-top: 0px;
+    margin-bottom: 10px;
+    padding: 15px 15px 15px 15px;
+    font-size: 20px;
+    width: 100%;
+    height: 60px;
+}
+
+.header-button {
+    border: none;
+    background-color: dodgerblue;
+    color: white;
+    padding-right: 10px;
+}
+
+.comment-section {
+    padding-top: 50px;
+}
+
+body {
+    background-color: lightgrey;
+}
+
+.btn-primary {
+    background-color: dodgerblue;
+    border-color: deepskyblue;
+}
+
+.btn-success {
+    background-color: limegreen;
+    border-color: lawngreen;
+}
+
+.btn {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+.list-group-item.active {
+    background-color: dodgerblue !important;
+    border: none;
+
+}
+
+.plus {
+    color: white;
+}

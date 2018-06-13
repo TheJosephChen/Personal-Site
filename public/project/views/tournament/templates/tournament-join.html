@@ -1,0 +1,47 @@
+<div class="running-head">
+    <a class="btn-link header-button pull-left" onclick="window.history.back()" role="button">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+    </a>
+    <a class="btn-link header-button pull-left" href="#!/" role="button">
+        Home
+    </a>
+    <a ng-show="!model.loggedInUser" class="btn-link header-button pull-right" href="#!/login" role="button">
+        Login
+    </a>
+    <a ng-show="model.loggedInUser" class="btn-link header-button pull-right" href="#!/login" role="button">
+        Logout
+    </a>
+    <a ng-show="model.loggedInUser" class="btn-link header-button pull-right" href="#!/profile/{{model.loggedInUser.username}}" role="button">
+        Profile
+    </a>
+</div>
+
+<div class="container-fluid scroll">
+    <h2>Build Deck by Code</h2>
+    <p>Enter your deck code and press 'Build'. Review the cards and if they are correct, click 'Submit and Join' below</p>
+
+    <input placeholder="Insert your deck code here"
+           ng-model="model.deckCode"
+           type="text"
+           class="form-control"/>
+    <button class="btn btn-primary btn-block" ng-click="model.getDeckByCode(model.deckCode)">
+        Build
+    </button>
+    example: MTo0MTgsMzo0MDUsMzo0MTIsMzo0MTcsMzoxMDAyMCwzOjEwOTgxLDM6MTEwODYsMzoxOTA1MiwzOjIwMTEyLDM6MjAxMTYsMzoyMDEyMiwzOjIwMTI1LDM6MjAyMjUsMzoyMDIzNA==
+
+
+    <table class="table">
+        <tr ng-repeat="card in model.deck">
+            <td>
+                <a href="#!/details/{{card.name}}">
+                    {{card.name}} x{{card.count}}
+                </a>
+            </td>
+        </tr>
+    </table>
+    <div ng-show="model.validDeck">
+        <a class="btn btn-primary btn-block" ng-click="model.joinTournament(model.loggedInUser, model.deckCode, model.tournamentId)" role="button">
+            Submit and Join
+        </a>
+    </div>
+</div>

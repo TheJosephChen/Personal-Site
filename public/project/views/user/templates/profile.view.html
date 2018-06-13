@@ -1,0 +1,56 @@
+<div class="running-head">
+    <a class="btn-link header-button pull-left" onclick="window.history.back()" role="button">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+    </a>
+    <a class="btn-link header-button pull-left" href="#!/" role="button">
+        Home
+    </a>
+    <a ng-show="!model.loggedInUser" class="btn-link header-button pull-right" href="#!/login" role="button">
+        Login
+    </a>
+    <a ng-show="model.loggedInUser" class="btn-link header-button pull-right" href="#!/login" role="button">
+        Logout
+    </a>
+    <a ng-show="model.loggedInUser" class="btn-link header-button pull-right" href="#!/profile/{{model.loggedInUser.username}}" role="button">
+        Profile
+    </a>
+</div>
+
+<div>
+    <div class="container-fluid scroll scroll-no-foot">
+        <h1>{{model.user.username}}'s Profile</h1>
+
+        <h1>ign: {{model.origUser.ign}}</h1>
+
+        <div ng-show="model.user.username === model.loggedInUser.username">
+            <label for="editIGN">Change your in-game name</label>
+            <input name="editIGN"
+                   ng-model="model.user.ign"
+                   id="editIGN"
+                   class="form-control"/>
+            <a class="btn btn-default btn-primary btn-block" ng-click="model.updateUser(model.user)" role="button">Change name</a>
+        </div>
+
+        <div ng-show="model.user.username !== model.loggedInUser.username && model.loggedInUser">
+            <label for="tournOrg">Rate {{model.user.username}} as a tournament organizer</label>
+            <input name="tournOrg"
+                   ng-model="model.rating"
+                   type="number"
+                   id="tournOrg"
+                   placeholder="0-10"
+                   class="form-control"/>
+            <a class="btn btn-default btn-primary btn-block" ng-click="model.rateUser(model.loggedInUser, model.user, model.rating)" role="button">Rate</a>
+        </div>
+
+
+        <b>Recent History:</b>
+        <table class="table">
+            <tr ng-repeat="history in model.user.history track by $index">
+                <td>
+                    {{history}}
+                </td>
+            </tr>
+        </table>
+
+    </div>
+</div>

@@ -1,0 +1,13 @@
+<div class="container-fluid scroll">
+    Text
+    <input ng-model="model.widget.text" class="form-control"/>
+    Rows
+    <input ng-model="model.widget.rows" class="form-control" type="number"/>
+    Placeholder
+    <input ng-model="model.widget.placeholder" class="form-control"/>
+    Formatted
+    <input ng-model="model.widget.formatted" type="checkbox"/>
+
+    <a class="btn btn-default btn-primary btn-block" ng-click="model.updateWidget(model.widget)" role="button">Ok</a>
+    <a class="btn btn-default btn-danger btn-block" ng-click="model.unCreate()" role="button">Delete</a>
+</div>
