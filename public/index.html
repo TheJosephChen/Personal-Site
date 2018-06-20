@@ -3,42 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <title>Home Page</title>
+    <link href="vendor/css/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
     <link href="./styles.css" rel="stylesheet"/>
 
 </head>
 <body>
-    <h1>Joseph Chen Home Page</h1>
-    <h2>About</h2>
-    <p>
-        My name is Joseph Chen. I graduated from Northeastern University in May 2018 with my B.S. in Computer science.
-        This website currently hosts projects completed in my capacity as a student and will be expanded as I see fit.
-    </p>
+    <div class="jumbotron">
+        <div class="container">
+            <h1>Welcome</h1>
+            <h2>About</h2>
+            <p>
+                My name is Joseph Chen. I graduated from Northeastern University in May 2018 with my B.S. in Computer science.
+                This website currently hosts projects completed in my capacity as a student and will be expanded as I see fit.
+            </p>
+            <li>Styling by Bootstrap</li>
+        </div>
+    </div>
 
+    <div class="container">
+        <h1>Projects</h1>
+        <a class="btn btn-primary btn-lg" href="project/index.html" role="button">
+            Duelyst Card and Tournament Website
+            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        </a>
 
-    <h1>Projects</h1>
-    <ul>
-        <li>
-            <h2><a href="project/index.html">Duelyst Card and Tournament Website</a></h2>
-            <b>
-                Final project for capstone course CS4550 - Web Development. The project is a website built for managing
-                information for the online collectible card game Duelyst. The website is built on a MEAN stack and features
-                a RESTful API that serves as the intermediary between the website and two public APIs developed for Duelyst.
-                The site features card lookup, deck building, tournament organization, and basic social interactions.
-            </b>
-            <br>
-            Technologies: JavaScript, HTML5, CSS, AngularJS, Node.js, Express.js, MongoDB
-        </li>
-    </ul>
+        <ul>
+            <li>
+                <b>
+                    Final project for capstone course CS4550 - Web Development. The project is a website built for managing
+                    information for the online collectible card game Duelyst. The website is built on a MEAN stack and features
+                    a RESTful API that serves as the intermediary between the website and two public APIs developed for Duelyst.
+                    The site features card lookup, deck building, tournament organization, and basic social interactions.
+                </b>
+            </li>
+            <li>
+                Technologies: JavaScript, HTML5, CSS, AngularJS, Node.js, Express.js, MongoDB
+            </li>
+        </ul>
 
+        <h2>Site links</h2>
+        <ul>
+            <li>
+                <a href="project/index.html">CS4550 - Web Development Final Project</a>
+            </li>
+            <li>
+                <a href="https://github.com/TheJosephChen/Personal-Site">The public repository for this entire website</a>
+            </li>
+        </ul>
 
-    <h2>Site links</h2>
-    <ul>
-        <li>
-            <a href="project/index.html">CS4550 - Web Development Final Project</a>
-        </li>
-        <li>
-            <a href="https://github.com/TheJosephChen/Personal-Site">The public repository for this entire website</a>
-        </li>
-    </ul>
+    </div>
 </body>
 </html>
